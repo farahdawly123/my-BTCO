@@ -1,0 +1,139 @@
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Anton&family=Bebas+Neue&family=Lilita+One&family=Lobster&family=Merriweather&family=Mulish:wght@700;800;900&family=Open+Sans:wght@800&family=Pacifico&family=Passion+One:wght@900&family=Poppins:wght@300;400;500;600;700;800;900&family=Prompt:wght@300&family=Russo+One&family=Sigmar&family=Tajawal&family=Titan+One&display=swap');
+
+// *{
+//   font-family: "Poppins", sans-serif;
+
+
+// }
+.about-us{
+  margin: 0;
+   height: 100vh;
+   overflow: hidden;
+}
+
+
+.line-after{
+  width: 15%;
+  height: 2px;
+  border-radius: 30px;
+  background-color: orange;
+}
+.about-heading {
+  font-family: 'Mulish', sans-serif;
+  font-size: 30px; /* adjust as needed */
+  font-weight: 700;
+  color: #333; /* adjust to match your design */
+  background-color: #fff; /* optional - add background color to set off the heading */
+  padding: 0 20px; /* add padding to make the heading more visible */
+  margin: 0; /* remove default margin */
+}
+.front-head {
+  text-align: center; /* center the heading */
+  position: relative; /* set position to relative for pseudo-element */
+
+}
+
+
+
+
+
+
+.about-l{
+
+  .about-l-txt{
+    h4{
+  font-family: "Poppins", sans-serif;
+font-size: 18px;
+      color: #333;
+      font-weight: 500;
+    }
+  }
+
+}
+.about-img{
+  position: absolute;
+  top: -50px;
+
+}
+.small-about{
+  background-color: #806d61;
+  position: absolute;
+  z-index: 9999;
+  bottom: -30px;
+  left: 0;
+  font-size: 16px;
+}
+.border-img{
+  border: 4px solid #ee7828;
+width: 400px;
+height: 350px;
+
+}
+// @media screen and (max-width: 800px) {
+//   .about-us{
+//     height: 80vh;
+//   }
+//  .small-about{
+//   display: none;
+//  }
+//   .about-img{
+//     width: 280px;
+//     top: 20px;
+//   }
+
+//   .border-img{
+//     width: 300px;
+//     height: 400px;
+//   }
+
+// }
+
+@media screen and (max-width: 800px) {
+.about-us{
+  height: 100vh;
+}
+.about-img{
+  display: none;
+}
+  .border-img{
+    display: none;
+  }
+  .small-about{
+    display: none;
+  }
+
+}
+@media screen and (max-width: 980px) {
+    .about-us{
+    height: 80vh;
+  }
+ .small-about{
+  display: none;
+ }
+  .about-img{
+    width: 280px;
+    top: 20px;
+  }
+
+  .border-img{
+    width: 300px;
+    height: 400px;
+  }
+
+}
+@media screen and (max-width: 500px) {
+  .about-us{
+    padding-top: 100px !important;
+
+  }
+}
+@media screen and (max-width: 333px) {
+  .about-us{
+    padding-top: 200px !important;
+    padding-bottom: 100px !important;
+
+  }
+}

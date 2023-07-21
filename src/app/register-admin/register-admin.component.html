@@ -1,0 +1,77 @@
+<div class="register">
+  <div class="row justify-content-center align-items-center vh-100 p-4">
+    <div class="col-md-4 col-12 bg-white  mb-md-0">
+      <div class="register-img">
+        <img src="assets/img/register.jpg" class="w-100 r-img p-3" >
+        <div class="layer-r p-3 text-center rounded-3">
+          <h3 class="pt-3">Welcome to BTCO!</h3>
+          <p>we are a community together helping thousands of people out there who are struggling</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-12 register-inputs bg-white">
+      <div class="r-form">
+        <h2 class="text-center mt-3 ">Get Started</h2>
+        <p class="text-center">Already have an account?<a routerLink="/login" class="text-black text-capitalize">Login</a></p>
+        <form [formGroup]="registerForm" (ngSubmit)="submitForm()" class="reg-form">
+
+          <!-- Name -->
+          <div class="form-group mb-2 align-items-start ms-2">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" formControlName="name" class="form-control" id="name" autocomplete="username"/>
+            <div *ngIf="registerForm.controls['name'].errors && registerForm.controls['name'].touched" >
+              <div *ngIf="registerForm.controls['name'].errors['required']" class="text-white my-2 bg-danger text-center">Name is required</div>
+              <div *ngIf="registerForm.controls['name'].errors['pattern']" class="text-white my-2 bg-danger">Name should be in a right manner</div>
+            </div>
+          </div>
+
+          <!--email-->
+          <div class="form-group mb-2 align-items-start ms-2">
+            <label for="email" class="form-label">Email: </label>
+            <input type="email"  formControlName="email"  class="form-control"/>
+            <div *ngIf="registerForm.controls['email'].errors&&registerForm.controls['email'].touched">
+              <div *ngIf="registerForm.controls['email'].errors['required']" class="text-white my-2 bg-danger">email is required</div>
+              <div *ngIf="registerForm.controls['email'].errors['email']" class="text-white my-2 bg-danger">email shouldbe in a right manner</div>
+            </div>
+          </div>
+
+          <!--phone number-->
+          <div class="form-group mb-2 align-items-start ms-2">
+            <label for="name" class="form-label">phone:</label>
+            <input type="number"  formControlName="phone_number"  class="form-control" />
+            <div *ngIf="registerForm.controls['phone_number'].errors&&registerForm.controls['phone_number'].touched">
+              <div *ngIf="registerForm.controls['phone_number'].errors['required']" class="text-white my-2 bg-danger">Phone Number is required</div>
+              <div *ngIf="registerForm.controls['phone_number'].errors['pattern']" class="text-white my-2 bg-danger">Phone Number should be in a right manner</div>
+            </div>
+          </div>
+
+          <!--password-->
+          <div class="form-group mb-2 align-items-start ms-2">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password"  formControlName="password"  class="form-control"  autocomplete="new-password"/>
+            <div *ngIf="registerForm.controls['password'].errors&&registerForm.controls['password'].touched">
+              <div *ngIf="registerForm.controls['password'].errors['required']" class="text-white my-2 bg-danger">password is required</div>
+              <div *ngIf="registerForm.controls['password'].errors['pattern']" class="text-white my-2 bg-danger">password should have 1 letter and numbers </div>
+            </div>
+          </div>
+
+          <!--confirm password-->
+          <div class="form-group mb-2 align-items-start ms-2">
+            <label for="password" class="form-label">Confirm Password:</label>
+            <input type="password"  formControlName="password_confirmation"  class="form-control"  autocomplete="new-password"/>
+            <div *ngIf="registerForm.controls['password_confirmation'].errors&&registerForm.controls['password_confirmation'].touched">
+              <div *ngIf="registerForm.controls['password_confirmation'].errors['required']" class="text-white my-2 bg-danger">password is required</div>
+              <div *ngIf="registerForm.controls['password_confirmation'].errors['pattern']" class="text-white my-2 bg-danger">password should have 1 letter and numbers </div>
+            </div>
+          </div>
+
+          <div class="btn-o text-center mt-4 pb-3 text-white">
+            <button [disabled]="registerForm.invalid"  type="submit" class="btn btn-register ">Register</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+em

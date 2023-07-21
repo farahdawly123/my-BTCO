@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Anton&family=Bebas+Neue&family=Lilita+One&family=Lobster&family=Mulish:wght@700;800;900&family=Open+Sans:wght@800&family=Pacifico&family=Passion+One:wght@900&family=Poppins:wght@300;400;500;600;700;800;900&family=Prompt:wght@300&family=Russo+One&family=Sigmar&family=Tajawal&family=Titan+One&display=swap');
+
+.forgot{
+  font-family: "Poppins", sans-serif;
+
+  background:rgba(0, 0, 0, 0.8) url("/assets/img/forgot.jpg") center center;
+  background-size: 100% 100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  .forgot-t{
+   border:1px solid #ccc;
+   padding:70px;
+   box-shadow:0px 2px 5px rgba(0,0,0,0.3);
+  }
+  .forgot-head{
+    text-align:center;
+    margin-bottom:20px;
+  }
+}

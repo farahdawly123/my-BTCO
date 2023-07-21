@@ -1,0 +1,62 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&family=Pacifico&family=Poppins:wght@300&family=Prompt:wght@300&family=Sigmar&family=Tajawal&family=Ysabeau:wght@300&display=swap');
+nav{
+  font-family: "Poppins", sans-serif;
+
+    z-index: 99999999999;
+    overflow-x: hidden;
+    background-color:transparent;
+
+}
+.nav-icon{
+  transform: translateX(70%);
+}
+
+.nav-content{
+  transform: translateX(-3%);
+li a{
+  font-family: 'Poppins', sans-serif;
+   padding: 10px;
+    color:white ;
+    transition: all 0.2s;
+    font-weight: 600;
+    letter-spacing: .5px;
+
+  }
+ li a:hover{
+    background-color: #ee7828;
+    border-radius: 36px;
+    color: white;
+  }
+
+ .active-link{
+  // padding: 0 10px;
+  background-color: #806d61     ; //806d61
+  border-radius: 36px;
+  transition: all 0.2s;
+  a{
+    color: white;
+  }
+
+}
+
+
+.nav-links{
+  padding:10px;
+  a{
+    color: white;
+    transition: all 0.2s;
+  }
+  a:hover{
+    color: #ee7828;
+
+  }
+
+}
+
+
+  }
+  .nav-logo{
+    width: 80px;
+    height: 32px;
+  }

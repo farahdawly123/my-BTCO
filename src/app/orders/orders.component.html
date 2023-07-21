@@ -1,0 +1,68 @@
+<div class="row gy-5">
+  <div class="col-md-6">
+    <div class="card text-center">
+      <div class="card-header custom-header">
+        All users orders:
+      </div>
+      <div class="table-container  table-scroll">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>User ID</th>
+              <th>Package ID</th>
+              <th>Total Cost</th>
+              <th>Illiterates Number</th>
+              <th>Created At</th>
+              <th>Updated At</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of allOrders" class="table-row">
+              <td>{{ order.id }}</td>
+              <td>{{ order.user_id }}</td>
+              <td>{{ order.package_id }}</td>
+              <td>{{ order.total_cost }}</td>
+              <td>{{ order.illiterates_number }}</td>
+              <td>{{ order.created_at }}</td>
+              <td>{{ order.updated_at }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </div>
+  <div class="col-md-6">
+    <div class="card text-center">
+      <div class="card-header custom-header">
+        All users orders:
+      </div>
+      <div class="table-container ">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>User ID</th>
+              <th>Package ID</th>
+              <th>Total Cost</th>
+              <th>Illiterates Number</th>
+              <th>Created At</th>
+              <th>Updated At</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of specOrders" class="table-row overflow-hidden">
+              <td>{{ order.id }}</td>
+              <td>{{ order.user_id }}</td>
+              <td>{{ order.package_id }}</td>
+              <td>{{ order.total_cost }}</td>
+              <td>{{ order.illiterates_number }}</td>
+              <td>{{ order.created_at }}</td>
+              <td>{{ order.updated_at }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

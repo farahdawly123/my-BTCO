@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="row">
+<!--Main Navigation-->
+<div class="col-md-2">
+
+  <!-- Sidebar -->
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse vh-100 ">
+    <div class="position-sticky">
+      <a class="navbar-brand"><img src="assets/img/6.png" alt="" class="nav-logo pt-4  ms-5 "></a>
+      <div class="list-group list-group-flush mx-3 mt-4 ">
+
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true" routerLink="/dashboard" routerLinkActive="active">
+          <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+        </a>
+
+        <a class="list-group-item list-group-item-action py-2 ripple" routerLink="/dashboard/orders" routerLinkActive="active"><i
+            class="fas fa-chart-bar fa-fw me-3"></i><span>Orders</span></a>
+        <a href="#" class="list-group-item list-group-item-action py-2 ripple" routerLink="/dashboard/users" routerLinkActive="active"><i
+            class="fas fa-users fa-fw me-3"></i><span>Users</span></a>
+        <a  *ngIf="!isLoggedIn" class="list-group-item list-group-item-action py-2 ripple" routerLink="/loginAdmin" routerLinkActive="active">
+          <i class="fas fa-sign-in-alt fa-fw me-3">
+        </i><span>Login</span></a>
+        <a  *ngIf="!isLoggedIn" class="list-group-item list-group-item-action py-2 ripple" routerLink="/registerAdmin" routerLinkActive="active">
+          <i class="fas fa-user-plus fa-fw me-3">
+        </i><span>Register</span></a>
+        <a class="list-group-item list-group-item-action py-2 ripple" *ngIf="isLoggedIn" (click)="logout()" >
+          <i class="fas fa-sign-out-alt fa-fw me-3"></i><span>Logout</span></a>
+      </div>
+    </div>
+  </nav>
+
+</div>
+
+    <div class="col-lg-10 col-md-9 col-sm-8">
+      <h1 class="mt-4 ms-3 mb-4 dash">Dashboard</h1>
+      <ul class="nav nav-tabs mb-4">
+        <li class="nav-item">
+          <a class="nav-link active text-black" routerLink="illiterates" routerLinkActive="active text-white bg-dark ">Illiterates</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black" routerLink="orders" routerLinkActive="active text-white bg-dark">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black" routerLink="users" routerLinkActive="active text-white bg-dark">Users</a>
+        </li>
+      </ul>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+

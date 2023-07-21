@@ -1,0 +1,21 @@
+.notfo
+{
+  background-image: url('/assets/img/4043.jpg') ;
+  background-repeat: no-repeat;
+  background-size: 100%  100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+.col-md-6{
+  transform: translateY(-300%);
+}
+
+button
+{
+  background-color: #808080;
+  padding: 5px 25px;
+}
+
+button:hover{
+  background-color: black;
+}

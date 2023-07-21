@@ -1,0 +1,69 @@
+.line-after{
+  width: 7%;
+  height: 2px;
+  border-radius: 30px;
+  background-color: orange;
+}
+.about-heading {
+  font-family: 'Mulish', sans-serif;
+  font-size: 30px; /* adjust as needed */
+  font-weight: 700;
+  color: black; /* adjust to match your design */
+  padding: 10px 20px; /* add padding to make the heading more visible */
+  margin: 0; /* remove default margin */
+}
+.front-head {
+  text-align: center; /* center the heading */
+  position: relative; /* set position to relative for pseudo-element */
+  margin-top: 50px; /* adjust as needed */
+}
+.mission{
+
+  overflow: hidden;
+  .mission-sec{
+    .miss-icon{
+      font-size: 50px;
+      color: #ffffff;
+    }
+  }
+
+.item-two{
+  h2{
+    font-size: 35px;
+    font-weight:600 ;
+  }
+  h4{
+    font-size: 18px;
+    font-weight: 300;
+  }
+  h3{
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+}
+.item-bef{
+  background-color: #ee7828;
+  height: 40px;
+  width: 5px;;
+
+}
+.btn-slide-one{
+     background-color: #ee7828;
+      padding: 0 30px;
+      border-radius: 36px;
+
+      line-height: 40px;
+      transition: all .3s;
+      font-weight: 600;
+      color: white;
+    }
+    .btn-slide-one:hover{
+      background-color: #b0c7cc;
+      border: 1px solid #7c7d80;
+    }
+  }
+
+
+
+

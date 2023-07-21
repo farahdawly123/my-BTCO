@@ -1,0 +1,22 @@
+<div class="forgot">
+  <div class="forgot-t text-white">
+    <h2  class="forgot-head">Forgot Password</h2>
+    <form [formGroup]="forgetPass" (ngSubmit)="submitForm()" >
+      <div class="form-group w-100">
+        <label for="email">Email:</label>
+        <input class="" type="email" id="email" name="email" class="form-control" formControlName="email" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="new-password">New Password:</label>
+        <input type="password" id="new-password" name="newPassword" class="form-control" formControlName="password" placeholder="Enter your new password">
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm New Password:</label>
+        <input type="password" id="confirm-password" name="confirmPassword" class="form-control" formControlName="password_confirmation" placeholder="Confirm your new password">
+      </div>
+      <div class="btn-forgot text-center">
+      <button type="submit" class="btn btn-secondary btn-block mt-4 w-75" [disabled]="forgetPass.invalid">Change</button>
+      </div>
+    </form>
+  </div>
+</div>

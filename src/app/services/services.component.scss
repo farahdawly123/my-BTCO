@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Anton&family=Bebas+Neue&family=Lilita+One&family=Lobster&family=Open+Sans:wght@800&family=Pacifico&family=Passion+One:wght@900&family=Poppins:wght@300;400;500;600;700;800;900&family=Prompt:wght@300&family=Russo+One&family=Sigmar&family=Tajawal&family=Titan+One&display=swap');
+
+*{
+  font-family: "Poppins", sans-serif;
+
+
+}
+.service{
+  background: linear-gradient(to bottom, #c5baaa, black);
+  height: 100vh;
+  .package{
+ height: fit-content;
+ border-radius: 3px;
+
+ .pack-top{
+  background-color: #f0f0f0;
+  h2{
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .pound{
+    font-size: 13px;
+}
+.sec-place{
+  font-size: 30px;
+}
+h3{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 70px;
+  font-weight: 900;
+}
+p{
+  font-size: 12px;
+}
+ }
+ .btn{
+  width: 100%;
+  font-weight: 600;
+ }
+  }
+
+}
+
+.pack-two{
+transform: translateY(-3%);
+}
+#pack-two-top{
+  background-color: #ee7828;
+}
+.card-rec{
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+  left: -10px;
+  width: 114px;
+  height: 114px;
+  z-index: 99;
+
+span{
+  position: absolute;
+    display: block;
+    width: 165px;
+    padding: 9px 0;
+    background-color: #23292c;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    color: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    left: -37px;
+    top: 21px;
+    letter-spacing: 1px;
+    transform: rotate(-45deg);
+}
+}
+
+
+@media screen and (max-width: 900px) {
+
+  .pack-top{
+    h3{
+      font-size: 35px !important;
+    }
+  }
+}
+@media screen and (max-width: 778px) {
+.col-md-4{
+  margin-bottom: 20px !important;
+}
+  .pack-top{
+  padding: 0 !important;
+
+  }
+  .card-body{
+  padding: 0 !important;
+  }
+}
+@media screen and (max-width: 470px) {
+ul{
+  padding: 0 !important;
+}
+}
+
+

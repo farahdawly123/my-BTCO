@@ -1,0 +1,85 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Anton&family=Bebas+Neue&family=Lilita+One&family=Lobster&family=Mulish:wght@700;800;900&family=Open+Sans:wght@800&family=Pacifico&family=Passion+One:wght@900&family=Poppins:wght@300;400;500;600;700;800;900&family=Prompt:wght@300&family=Russo+One&family=Sigmar&family=Tajawal&family=Titan+One&display=swap');
+
+.payform{
+  font-family: "Poppins", sans-serif;
+
+
+color: black;
+font-size: 20px;
+background: linear-gradient(to bottom, black, #806d61, black);}
+
+.label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.label__text {
+  flex: 1;
+}
+
+.label__required-indicator {
+  color: red;
+  margin-left: 4px;
+}
+
+#workspaceL
+{
+  font-size: 10px;
+}
+.formpy{
+  z-index: 99999;
+  form{
+    border: 2px solid black;
+    border-left: none;
+  }
+}
+
+.btn-form{
+  background-color: #ee7828;
+  border: none;
+  font-weight: 500;
+  padding-top: 10px;
+}
+.btn-form-t{
+  background-color: #806d61;
+  border: none;
+  font-weight: 500;
+  padding-top: 10px;
+}
+h4{
+  font-weight: 600;
+  font-size: 25px;
+}
+.pay-img{
+  img{
+
+transform: translateX(40%);
+border: 2px solid black;
+
+    }
+}
+
+@media screen and (max-width: 800px) {
+  .pay-img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .invoice{
+    padding-top: 100px !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .invoice {
+    height: 400px;
+    transform: translateY(50%) !important;
+  }
+  .invoice-container {
+    overflow-y: scroll !important;
+  }
+}

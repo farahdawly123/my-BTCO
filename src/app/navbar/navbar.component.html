@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-light position-fixed start-0 end-0 p-4 " [ngClass]="{ 'fixed-top': isNavbarFixed ,'bg-black':isNavbarFixed , 'z-index :99999999' :isNavbarFixed  }">
+    <a class="navbar-brand ms-5 nav-icon " >
+      <img src="assets/img/4.png" alt="" class="nav-logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon bg-white border-3 rounded-2"></span>
+    </button>
+
+    <div class="collapse navbar-collapse me-3 " id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto nav-content">
+        <li class="nav-item" [routerLinkActive]="['active-link']">
+          <a class="nav-link "  routerLink="home" >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " routerLinkActive='active-link' routerLink="about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive='active-link' routerLink="target">Our Target</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive='active-link' routerLink="mission">Why BTCO</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" routerLinkActive='active-link' routerLink="contact">Contact us </a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" routerLinkActive='active-link' routerLink="services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive='active-link' routerLink="help">Help us</a>
+        </li>
+        <li class="nav-item active" routerLinkActive='active-link'>
+          <a class="nav-link" routerLink="Register" *ngIf="!isLoggedIn">Register</a>
+        </li>
+        <li class="nav-item" routerLinkActive='active-link' *ngIf="!isLoggedIn">
+          <a class="nav-link"  routerLink="login" >Login</a>
+        </li>
+        <li *ngIf="isLoggedIn" class="nav-item" routerLinkActive='active-link'>
+          <a class="nav-link"
+          (click)="logout()" >Logout</a>
+        </li>
+
+
+
+
+        <div class="nav-links text-white">
+      <a> <i class="fab fa-twitter fa-fw me-2" ></i></a>
+
+     <a>  <i class="fab fa-facebook-f fa-fw me-2"></i></a>
+     <a> <i class="fab fa-instagram fa-fw me-2"></i></a>
+       </div>
+      </ul>
+        </div>
+
+  </nav>

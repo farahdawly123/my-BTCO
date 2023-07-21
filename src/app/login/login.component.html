@@ -1,0 +1,53 @@
+
+<div class="register vh-100">
+  <div class="row justify-content-center align-items-center regi">
+    <div class="col-md-4 col-12 register-inputs bg-white">
+      <div class="r-form row justify-content-center align-content-center">
+        <h2 class="text-center mt-5 mb-4">Login</h2>
+        <p class="text-center">New to our community? <a routerLink="/Register" class="text-black text-capitalize">Register</a></p>
+
+   <form [formGroup]="loginForm" (ngSubmit)="submitForm()" class="reg-form">
+
+    <!-- email -->
+    <div class="form-group mb-2 align-items-start ms-2">
+      <label for="name" class="form-label ms-2">Email:</label>
+        <input type="email"  formControlName="email"  class="form-control ms-2"  />
+        <div *ngIf="loginForm.controls['email'].errors&&loginForm.controls['email'].touched">
+          <div *ngIf="loginForm.controls['email'].errors['required']" class="text-white my-2 bg-danger">email is required</div>
+          <div *ngIf="loginForm.controls['email'].errors['email']" class="text-white my-2 bg-danger">email should be in a right manner</div>
+      </div>
+    </div>
+    <!--password-->
+    <div class="form-group mb-2 align-items-start ms-2">
+      <label for="name" class="form-label ms-2">Password:</label>
+
+        <input type="password"  formControlName="password"  class="form-control ms-2"/>
+        <div *ngIf="loginForm.controls['password'].errors&&loginForm.controls['password'].touched">
+          <div *ngIf="loginForm.controls['password'].errors['required']" class="text-white my-2 bg-danger">password is required</div>
+          <div *ngIf="loginForm.controls['password'].errors['pattern']" class="text-white my-2 bg-danger">password should have 1 letter and numbers </div>
+
+
+
+      </div>
+    </div>
+    <div class="text-center text-white">
+    <button [disabled]="loginForm.invalid"  type="submit" class="btn btn-register mt-4">Login</button>
+
+    </div>
+    <div class="text-center pt-3">
+    <a routerLink="/forgetPass" >Forgot Password?</a>
+    </div>
+  </form>
+      </div>
+    </div>
+    <div class="col-md-4 col-12 bg-white  mb-md-0">
+      <div class="register-img">
+        <img src="assets/img/login.jpg" class="w-100 r-img p-3" alt="">
+        <div class="layer-r p-1 text-center rounded-3">
+          <h3 class="pt-3">Welcome Back! </h3>
+          <p>To keep connected with us please login with your personal information</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

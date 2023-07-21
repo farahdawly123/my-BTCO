@@ -1,0 +1,73 @@
+<div id="illiterates" class="tab-pane fade show active">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card text-center">
+        <div class="card-header custom-header">
+          All Illiterates
+        </div>
+        <div class="table-container p-5" style="height: 400px; overflow-y: scroll;">
+          <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>Available</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr *ngFor="let illiterate of premOrders" style="border: solid 1px black;">
+                <td>{{ illiterate.id }}</td>
+                <td>{{ illiterate.name }}</td>
+                <td>{{ illiterate.address }}</td>
+                <td>{{ illiterate.phone_number }}</td>
+                <td>{{ illiterate.available }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 ">
+      <div class="card text-center">
+        <div class="card-header custom-header">
+          Add Person
+        </div>
+        <div class="card-body ">
+          <h5 class="mt-4 mb-4">Add illiterate person to your database: </h5>
+          <form class="form-control" [formGroup]="addInForm" (ngSubmit)="submitForm()">
+            <div class="mb-3">
+              <label class="form-label">Name:</label>
+              <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Address:</label>
+              <input type="text" class="form-control" formControlName="address">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">PhoneNumber:</label>
+              <input type="number" class="form-control" formControlName="phone_number">
+            </div>
+          <div class="mb-3 w-100">
+            <label class="form-label">Location:</label>
+           <select formControlName="location">
+            <option [disabled]="true">Please select location</option>
+            <option value="Abasya">Abasya</option>
+            <option value="Giza">Giza</option>
+            <option value="Helwan">Helwan</option>
+           </select>
+            <div *ngIf="addInForm.controls['location'].errors&&addInForm.controls['location'].touched">
+
+
+              <div *ngIf="addInForm.controls['location'].errors['required']" class="text-danger my-2 ">Location is required</div>
+         </div>
+          </div>
+            <button [disabled]="addInForm.invalid" type="submit" class="btn btn-add my-3"> Add Person</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

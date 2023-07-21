@@ -1,0 +1,64 @@
+
+<div class=" vh-100 contact d-flex justify-content-center align-items-center">
+
+
+<div class="container contact-form bg-white rounded-3  ">
+<div class="row">
+  <div class="col-md-6 ps-2">
+<div class="con-img">
+  <img src="assets/img/contact-4.jpg" class="img-fluid ms-5 rounded-4" alt="">
+</div>
+  </div>
+<div class="col-md-6 p-3 my-5 pe-5">
+   <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="reg-form my-5" >
+    <h2 class="text-center my-5">Contact Us</h2>
+       <!--feedback-->
+       <div class="form-group mb-2 align-items-start ms-2">
+        <label for="name" class="form-label">Please enter the details of your request:</label>
+
+           <textarea type="text"  formControlName="user_message"  class="form-control p-4 h-100 rounded-3" placeholder="Write your feedback here ..." ></textarea>
+           <div *ngIf="contactForm.controls['user_message'].errors&&contactForm.controls['user_message'].touched">
+             <div *ngIf="contactForm.controls['user_message'].errors['required']" class="text-white my-2 bg-danger">feedback is required</div>
+
+
+         </div>
+       </div>
+<div class="text-center mt-3 mb-2 ">
+       <button [disabled]="contactForm.invalid"  type="submit" class="btn btn-feed">Send Feedback</button>
+       <div *ngIf="showMessage" class="text-black">{{message}}
+        <p>go back to <a routerLink="/home" >Home</a></p>
+       </div>
+       </div>
+     </form>
+
+     <div class="d-flex justify-content-center text-center  " >
+
+      <div class="col-md-6 w-50  p-2">
+        <h5 class="text-black mb-3">We'd love to hear from you! Contact us on :</h5>
+        <div class="f-con mb-2">
+          <i class="fa-regular fa-envelope fa-2xl" ></i>
+          <span class="ms-2 text-black">Btco@gmail.com</span>
+        </div>
+        <div class="sec-con">
+          <i class="fa-solid fa-phone fa-2xl"></i>
+          <span class="ms-3 text-black">+20 1156220790</span>
+        </div>
+      </div>
+      <div class="col-md-6 s-m nav-links">
+        <h5 class=" mt-1 mb-4">Or Join our social media community:</h5>
+        <a> <i class="fab fa-twitter fa-fw me-2" ></i></a>
+
+        <a>  <i class="fab fa-facebook-f fa-fw me-2"></i></a>
+        <a> <i class="fab fa-instagram fa-fw me-2"></i></a>
+      </div>
+    </div>
+
+
+
+
+ </div>
+
+</div>
+</div>
+</div>
+<app-footer></app-footer>

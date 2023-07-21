@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Anton&family=Bebas+Neue&family=Lilita+One&family=Lobster&family=Pacifico&family=Poppins:wght@300;400;500&family=Prompt:wght@300&family=Russo+One&family=Sigmar&family=Tajawal&display=swap');
+*{
+  font-family: "Poppins", sans-serif;
+box-sizing: border-box;
+
+}
+.contact
+{
+  background: linear-gradient(120deg, #806d61 0%, #ffe0b3 100%);
+  .contact-form{
+    transform: translateY(3%);
+
+    textarea{
+      background-color: #fff;
+      border: 1px solid #333;
+    }
+    label {
+      color: #333;
+      font-size: 1rem;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+  }
+.con-img{
+  transform: translateY(8%);
+img{
+  height:550px;
+}
+}
+@media screen and (min-width: 750px) and (max-width: 1300px) {
+  img{
+   display: none;
+  }
+}
+@media screen and (max-width: 460px) {
+form{
+  width: 100% !important;
+}
+.form-help{
+  width: 100% !important;
+}
+.con-img{
+  display: none;
+}
+}
+
+
+span {
+  color: #806d61;
+  font-size: 1.2rem;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.s-m{
+  border-left: 1px solid;
+}
+.nav-links{
+
+  a{
+font-size: 20px;
+    transition: all 0.2s;
+  }
+  a:hover{
+    color: #ee7828;
+
+  }
+
+}
+
+  }
+
+
+  .btn-add{
+    color: white;
+button{
+  background-color: #ee7828;
+
+font-weight: 600;
+font-size: 15px;
+padding: 7px 25px;
+}
+
+  }
+

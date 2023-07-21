@@ -1,0 +1,282 @@
+
+<div class=" vh-100 payform d-flex justify-content-center align-items-center">
+  <div class="container bg-white rounded-4  ">
+  <div class="row">
+        <!--left-->
+        <!--retriving illliterates data once payment confirmend-->
+    <div class="col-md-4 ps-5 row pt-4 justify-content-center ">
+  <div class="con-img text-center">
+    <!-- show if no payment confirmation only -->
+        <div class="pay-img " *ngIf="!illiterateDetails" >
+        <img src="/assets/img/pay12.jpg" alt="" class="w-100 rounded-4 ">
+        </div>
+
+    <!--show if payment information-->
+        <div  *ngIf="illiterateDetails"  class="invoice-container">
+        <div class=" pt-2 invoice">
+          <h3 class="text-danger pt-3">Payment confirmed!</h3>
+          <h5 class="bg-danger text-white">Don't forget to take screenshot before leaving this page</h5>
+          <p>Your illiterate details are as follows:</p>
+        <div class=" p-2">
+          <pre class="mb-1">{{ illiterateDetails }}</pre>
+          <h5>Thank you for choosing our services.</h5>
+          <p class="text-secondary">if there is a problem <a routerLink="/contact">Contact us</a></p>
+        </div>
+        <div *ngIf="workspaceDetails">
+          <h3>Workspace Details</h3>
+          <p>{{ workspaceDetails }}</p>
+
+        </div>
+        </div>
+        </div>
+
+    </div>
+    </div>
+
+    <!--right-->
+  <div class="col-md-8  my-2 pe-5 formpy" >
+  <div class="payment-form p-3">
+  <form class="form-control p-5 rounded-4" [formGroup]="PayForm" (ngSubmit)="submitForm()">
+  <div class="text-center">
+        <h4>Payment</h4>
+  </div>
+  <div class="row">
+          <div class="col-md-12">
+
+            <!--Package type -->
+            <div class="form-group p-2">
+              <label class="label">
+                <span class="label__text">Package Type:</span>
+                <span class="label__required-indicator">*</span>
+              </label>
+              <div class="input-group">
+                <select class="form-control" formControlName="packagetype" id="packagetype" (change)="onPackageTypeChange()">
+                  <option value="" disabled selected>Choose package Type</option>
+                  <option [value]="package.package_type" [id]="package.id" *ngFor="let package of packageListType">{{package.package_type}}</option>
+                </select>
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="fa-solid fa-box fa-xl" style="color: #806d61;"></i></span>
+                </div>
+              </div>
+              <div *ngIf="PayForm.controls['packagetype'].errors && PayForm.controls['packagetype'].touched">
+                <div *ngIf="PayForm.controls['packagetype'].errors['required']" class="text-white my-2 bg-danger">Required Field</div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+        <div class="row">
+          <div class="col-md-12">
+
+            <!--num of people-->
+
+
+            <div class="form-group p-2">
+              <label class="label">
+                <span class="label__text">Choose number of people:</span>
+                <span class="label__required-indicator">*</span>
+              </label>
+              <div class="input-group">
+                <select formControlName="numOfPeople" id="numOfPeopleInput" class="form-control">
+                  <option value="" disabled selected>Choose number of people</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="fa-solid fa-users-line fa-xl" style="color: #806d61;"></i></span>
+                </div>
+              </div>
+              <div *ngIf="PayForm.controls['numOfPeople'].errors && PayForm.controls['numOfPeople'].touched">
+                <div *ngIf="PayForm.controls['numOfPeople'].errors['required']" class="text-white my-2 bg-danger">Required Field</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row p-2">
+          <div class="col-md-6">
+
+            <!--uni-->
+            <div class="form-group">
+              <label class="label">
+                <span class="label__text">Your University:</span>
+                <span class="label__required-indicator">*</span>
+              </label>
+              <div class="input-group">
+                <select class="form-control" formControlName="user_university" id="user_university">
+                  <option value="" disabled selected>Please enter your university</option>
+                  <option value="Cairo">Cairo</option>
+                  <option value="Ain shams">Ain shams</option>
+                  <option value="Helwan">Helwan</option>
+                  <option value="Other">Other</option>
+                </select>
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="fas fa-university fa-xl" style="color: #806d61;"></i></span>
+                </div>
+              </div>
+              <div *ngIf="PayForm.controls['user_university'].errors && PayForm.controls['user_university'].touched">
+                <div *ngIf="PayForm.controls['user_university'].errors['required']" class="text-white my-2 bg-danger">Required Field</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <!--workspace-->
+            <div class="form-group">
+              <label class="label">
+                <span class="label__text">Workspace:</span>
+                <span class="label__required-indicator" id="workspaceL">Premium only</span>
+              </label>
+              <div class="input-group">
+                <select class="form-control" formControlName="workspace" id="workspace">
+                  <option value="" disabled selected>Choose Workspace</option>
+                  <option [value]="workspace.name" [id]="workspace.id" *ngFor="let workspace of workspaces">{{workspace.name}}</option>
+                </select>
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="fas fa-building fa-xl" style="color: #806d61;"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row p-2">
+          <div class="col-md-6">
+
+            <!--card num-->
+            <div class="form-group ">
+              <label class="label">
+                <span class="label__text">Card Number:</span>
+                <span class="label__required-indicator">*</span>
+              </label>
+              <div class="input-group">
+                <input type="text" formControlName="credit_card_number" placeholder="0000 0000 0000 0000" class="form-control" id="credit_card_number">
+                <div class="input-group-append">
+                  <span class="input-group-text p-2"><i class="fa-brands fa-cc-visa fa-xl" style="color: red;"></i></span>
+                </div>
+              </div>
+              <div *ngIf="PayForm.controls['credit_card_number'].errors && PayForm.controls['credit_card_number'].touched">
+                <div *ngIf="PayForm.controls['credit_card_number'].errors['required']" class="text-white my-2 bg-danger">Card number is required</div>
+                <div *ngIf="PayForm.controls['credit_card_number'].errors['pattern']" class="text-white my-2 bg-danger">Invalid card number</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <!--cvv-->
+              <label class="label">
+                <span class="label__text">CVV:</span>
+                <span class="label__required-indicator">*</span>
+              </label>
+              <div class="input-group">
+                <input type="text" formControlName="credit_card_cvv" placeholder="" class="form-control" id="credit_card_cvv">
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="fas fa-lock fa-xl" style="color: #806d61;"></i></span>
+                </div>
+              </div>
+              <div *ngIf="PayForm.controls['credit_card_cvv'].errors && PayForm.controls['credit_card_cvv'].touched">
+                <div *ngIf="PayForm.controls['credit_card_cvv'].errors['required']" class="text-white my-2 bg-danger">CVV is required</div>
+                <div *ngIf="PayForm.controls['credit_card_cvv'].errors['pattern']" class="text-white my-2 bg-danger">Invalid CVV</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group text-center mt-3">
+
+            <button class="btn btn-form w-50 rounded-3 text-white" [disabled]="PayForm.invalid" type="submit">Submit Payment</button>
+
+          </div>
+          <div class="text-center mt-2">
+            <button type="button" class="btn btn-form-t w-50 rounded-3 text-white" (click)="clearInputs()">Clear form</button>
+
+          </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+      </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  <app-footer></app-footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
